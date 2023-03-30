@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-manrope font-[400] text-[18px] leading-8 text-darkPurple overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-[600] font-fraunces;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply font-bold transition-colors duration-500 focus:outline-none;
+  }
+  .btn-primary {
+    @apply bg-primary  py-2 px-4  text-darkPurple hover:bg-transparent border-[1px] border-solid border-primary hover:text-primary;
+  }
+  .btn-secondary {
+    @apply border-b-[2px] border-solid border-primary text-white hover:text-primary;
+  }
+  .app-container {
+    @apply px-4 w-full md:px-[97px]  lg:px-[120px] xl:px-[165px];
+  }
+  .hero-clip {
+    border-end-start-radius: 50% 20%;
+    border-end-end-radius: 50% 20%;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @apply bg-darkPurple;
+    clip-path: ellipse(170% 100% at 50% 0);
+  }
+
+  .hero-img-container {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    max-width: 430px;
+  }
+}
